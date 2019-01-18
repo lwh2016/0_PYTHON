@@ -1,0 +1,32 @@
+Metadata-Version: 1.0
+Name: MotionWise_Python_Tools
+Version: 6.1.1-4.4.0
+Summary: UNKNOWN
+Home-page: http://www.tttech.com
+Author: TTTech Automotive GmbH
+Author-email: MotionWise-support-ext@tttech-automotive.com
+License: UNKNOWN
+Description: MotionWise Python Tools 6.1.1
+            based on IFSET: 4.4.0
+            includes RA lib: 8.0.15
+            with the RA Python wrapper: 5.0.2
+        
+        Contains the following scripts:
+        
+        MotionWise_Log.py 2.0.2
+        Script for MotionWise logging and tracing configuration
+        
+        MotionWise_Routing.py 1.0.5
+        Script for MotionWise routing configuration
+        
+        MotionWise_Perf.py 3.0.80204
+        Script for MotionWise performance measurement
+        
+        MotionWise_ODX_Flash_Convert.py 2.4.2
+        Script for preparing an ODX Flash container for USB flashing
+        
+        MotionWise_Show.py 1.0.0
+        Script for monitoring single port elements, routed from MotionWise
+        
+        
+Platform: UNKNOWN
