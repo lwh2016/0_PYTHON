@@ -7,7 +7,7 @@ searchStyle = re.compile(
     r'root(\s+)(\d+)(\s+)(\d).(\d)(\s+)(\d).(\d)(\s)(\d+)(\s+)(\d+).*(R|Sl)\s+(\d+):(\d+)\s+(\d+):(\d+)\s+(\w+)'
 )
 
-fr = open('F:/0_PYTHON/9-WorkSpace/123.txt', 'r')
+fr = open('9-WorkSpace/2_RamUsage/123.txt', 'r')
 lines = fr.readlines()
 L = []
 for line in lines:
