@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Factorial.py
+# @filename Factorial.py
 # @author guokonghui
 # @description
 # @created Fri Jan 18 2019 17:08:52 GMT+0800 (中国标准时间)
-# @last-modified Fri Jan 18 2019 20:16:44 GMT+0800 (中国标准时间)
+# @last-modified Mon Jan 21 2019 13:21:58 GMT+0800 (中国标准时间)
 #
 
 
