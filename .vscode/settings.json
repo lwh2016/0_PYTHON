@@ -1,8 +1,8 @@
 {
     "python.pythonPath": "/usr/bin/python3",
     "workbench.colorTheme": "Monokai",
-    "editor.cursorBlinking": "solid",
-    "editor.cursorStyle": "block",
-    "editor.cursorWidth": 2,
+    "editor.cursorBlinking": "blink",
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 1,
     "terminal.integrated.cursorBlinking": true
 }
