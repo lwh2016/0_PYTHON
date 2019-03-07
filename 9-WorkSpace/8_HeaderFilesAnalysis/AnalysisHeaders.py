@@ -25,11 +25,12 @@ def searchFileByName(path, name, deepMod=True):
 
 
 def getCxxHeaders(path, cxxFile):
-    exclusions = ['Python.h']
+    exclusions = []
     if not os.path.isfile(cxxFile):
         try:
             cxxFile = searchFileByName(path, cxxFile)
         except:
+            exclusions.append(cxxFile)
             print("The %s not exist" % cxxFile)
     headersList = []
     headersSet = set()
@@ -53,6 +54,8 @@ def analysisAllHeaders(path, file2ana, deepMod=True):
         anaResult = getCxxHeaders(path, file2ana)
     else:
         curLevelHeadersSet = getCxxHeaders(path, file2ana)
+        N_set = {None}
+        curLevelHeadersSet = curLevelHeadersSet - N_set
         length = len(curLevelHeadersSet)
         while length > 0:
             lastLevelHeadersSet = cp.deepcopy(curLevelHeadersSet)
@@ -61,12 +64,13 @@ def analysisAllHeaders(path, file2ana, deepMod=True):
             for file in lastLevelHeadersSet:
                 headerSet = getCxxHeaders(path, file)
                 curLevelHeadersSet = curLevelHeadersSet | headerSet
+                N_set = {None}
+                curLevelHeadersSet = curLevelHeadersSet - N_set
             length = len(curLevelHeadersSet)
     return anaResult
 
 
 def getCxxSource(path ,headerFile):
-    sourcesSet = set()
     if not os.path.isfile(headerFile):
         headerFile = searchFileByName(path, headerFile)
     path, name = os.path.split(headerFile)
@@ -92,23 +96,24 @@ def getCxxSource(path ,headerFile):
             if item_path in pathName:
                 return item_path
                 
-    print("This header filr %s not have source file" % header)
+    print("This header file %s not have source file" % header)
     return
 
 
-
-
-
 if __name__ == "__main__":
-    cxxFile = "test/exe/exe.cc"
-    path = "/home/igs/Backup/Test-0228"
+    cxxFile = "/examples/talker.cc"
+    path = "/home/igs/Code/cyber"
 
     r_headers = analysisAllHeaders(path, cxxFile)
-    print(r_headers)
-    
+    print(len(r_headers))
+
+    number_src = 0
     for h in r_headers:
         sf = getCxxSource(path, h)
+        if sf is not None:
+            number_src = number_src + 1
         print(sf)
+    print(number_src)
 
 
 
