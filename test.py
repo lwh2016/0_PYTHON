@@ -42,10 +42,43 @@
 # #     temName = temName + str(ele) + "."
 # # print(temName)
 # #print("The %s file not in this path %s" % (name,path))
-s = {1,2,3,4,None}
-s1 = {5,6,7,8,9,None}
-N_set = {None}
-s2 = s|s1
-s3 = s2 - N_set
-for i in s3:
-    print(i)
+# s = {1,2,3,4,None}
+# s1 = {5,6,7,8,9,None,1,3}
+# s2 = s1 - s&s1
+# print(s2)
+# import shutil
+# import os
+
+# srcPath = "/home/igs/Code/cyber"
+# orgFileList = ["/home/igs/Code/cyber/proto/choreography_conf.pb.cc"]
+# tarPath = "/home/igs/MMNN"
+
+# for f in orgFileList:
+#     tarPathTail = f.split(srcPath)[-1]
+#     tarPathFile = tarPath+tarPathTail
+#     tp,tf = os.path.split(tarPathFile)
+#     if not os.path.isdir(tp):
+#         os.makedirs(tp)
+#     shutil.copyfile(f,tarPathFile)
+
+import os
+
+file = "/home/igs/0_PYTHON/test.cc"
+file_new = "/home/igs/0_PYTHON/test2.cc"
+f_new = open(file_new,'w')
+with open(file, 'r') as f:
+    arrayLines = f.readlines()
+    for line in arrayLines:
+        if (line.startswith("namespace apollo{"))  or (line.startswith("} // namespace apollo")) :
+            line = "//" + line
+        elif "apollo." in line:
+            line = line.replace("apollo.", "")
+        elif "apollo::" in line:
+            line = line.replace("apollo::", "")
+        f_new.write(line)
+    f.close()
+    f_new.close()
+# os.remove(file)
+# os.rename(file_new,file)
+
+            

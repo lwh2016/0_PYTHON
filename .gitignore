@@ -2,3 +2,5 @@
 *.ini
 *.xlsx
 *.json
+*.cc
+test.py
